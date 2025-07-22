@@ -22,6 +22,34 @@
       padding: 2rem;
     }
 
+    nav {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(0,255,200,0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 0.75rem 0;
+    }
+
+    nav a {
+      color: #00ffc8;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #00ffc8;
+    }
+
     header {
       text-align: center;
       margin-bottom: 2rem;
@@ -60,17 +88,21 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.10);
       backdrop-filter: blur(10px);
       border-radius: 12px;
       padding: 1.5rem;
       text-align: center;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(0,255,200,0.15);
+      background: rgba(0,255,200,0.12);
     }
 
     .card a {
@@ -80,10 +112,14 @@
       font-weight: 600;
       display: block;
       margin-top: 0.5rem;
+      padding: 0.5rem 0;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
     }
 
     .card a:hover {
       color: #00ffd5;
+      background: rgba(0,255,200,0.08);
     }
 
     footer {
@@ -95,6 +131,11 @@
     }
 
     @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
       header img {
         width: 120px;
         height: 120px;
@@ -103,11 +144,20 @@
       header h1 {
         font-size: 1.5rem;
       }
+
+      .card-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
+  <nav>
+    <a href="Html_proj.html">HTML</a>
+    <a href="J_s.html">JavaScript</a>
+    <a href="CYbver_sec.html">Cybersecurity</a>
+    <a href="python.html">Python</a>
+  </nav>
   <header>
     <img src="IMG_0150.JPG" alt="Jay's Profile Photo">
     <h1>Jay's Portfolio</h1>
@@ -123,14 +173,12 @@
     <div class="card">
       <a href="CYbver_sec.html">🔐 Cybersecurity Portfolio</a>
     </div>
-     <div class="card">
-      <a href="python.html">Python Excercise</a>
+    <div class="card">
+      <a href="python.html">🐍 Python Exercise</a>
     </div>
   </div>
-
   <footer>
     &copy; 2025 Jay | Portfolio crafted with 💻 and ☕
   </footer>
-
 </body>
 </html>
